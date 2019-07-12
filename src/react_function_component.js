@@ -7,8 +7,6 @@
 
 
 function ComponentName(props) {
-  return <h1>Hello, {props.name}</h1>
+  return <div>Hello, {props.name}</div>
 }
 
-
-export default ComponentName
