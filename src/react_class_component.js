@@ -1,7 +1,6 @@
 import React from 'react'
 
 class ComponentName extends React.Component {
-
   static defaultProps = {
     // TODO
   }
@@ -12,10 +11,17 @@ class ComponentName extends React.Component {
     this.state = {
       // TODO
     }
+
+    // bind this
+    this.nameMethod = this.nameMethod.bind(this)
   }
 
   render() {
-    return (<div />)
+    return <div />
+  }
+
+  nameMethod() {
+    // TODO
   }
 
   // Lifecycle Methods

@@ -1,25 +1,26 @@
-extends javascript
+extends typescript
 
+snippet reactct "Create react class component with typescript"
+import { Component } from 'react'
 
-snippet reactf "Create react function component"
-function ComponentName(props) {
-  return <div>Hello, {props.name}</div>
+interface ComponentNameProps {
+  propName: string
 }
-endsnippet
 
-snippet reactc "Create react class component with es6"
-import React from 'react'
+interface ComponentNameState {
+  stateName: string
+}
 
-class ComponentName extends React.Component {
+class ComponentName extends Component<ComponentNameProps, ComponentNameState> {
   static defaultProps = {
     // TODO
   }
 
-  constructor(props) {
+  constructor(props: ComponentNameProps) {
     super(props)
 
     this.state = {
-      // TODO
+      stateName: 'TODO',
     }
 
     // bind this
@@ -59,20 +60,30 @@ class ComponentName extends React.Component {
 export default ComponentName
 endsnippet
 
+snippet reactpct "Create react pure component with typescript"
+import { PureComponent } from 'react'
 
-snippet reactpc "Create react pure class component with es6"
-import React from 'react'
+interface ComponentNameProps {
+  propName: string
+}
 
-class ComponentName extends React.PureComponent {
+interface ComponentNameState {
+  stateName: string
+}
+
+class ComponentName extends PureComponent<
+  ComponentNameProps,
+  ComponentNameState
+> {
   static defaultProps = {
     // TODO
   }
 
-  constructor(props) {
+  constructor(props: ComponentNameProps) {
     super(props)
 
     this.state = {
-      // TODO
+      stateName: 'TODO',
     }
 
     // bind this

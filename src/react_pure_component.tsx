@@ -1,15 +1,26 @@
-import React from 'react'
+import { PureComponent } from 'react'
 
-class ComponentName extends React.PureComponent {
+interface ComponentNameProps {
+  propName: string
+}
+
+interface ComponentNameState {
+  stateName: string
+}
+
+class ComponentName extends PureComponent<
+  ComponentNameProps,
+  ComponentNameState
+> {
   static defaultProps = {
     // TODO
   }
 
-  constructor(props) {
+  constructor(props: ComponentNameProps) {
     super(props)
 
     this.state = {
-      // TODO
+      stateName: 'TODO',
     }
 
     // bind this
