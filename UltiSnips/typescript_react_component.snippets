@@ -11,7 +11,7 @@ interface ComponentNameState {
   stateName: string
 }
 
-class ComponentName extends Component<ComponentNameProps, ComponentNameState> {
+class `!v expand('%:t:r')` extends Component<ComponentNameProps, ComponentNameState> {
   static defaultProps = {
     // TODO
   }
@@ -57,7 +57,7 @@ class ComponentName extends Component<ComponentNameProps, ComponentNameState> {
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
-export default ComponentName
+export default `!v expand('%:t:r')`
 endsnippet
 
 snippet reactpct "Create react pure component with typescript"
@@ -71,7 +71,7 @@ interface ComponentNameState {
   stateName: string
 }
 
-class ComponentName extends PureComponent<
+class `!v expand('%:t:r')` extends PureComponent<
   ComponentNameProps,
   ComponentNameState
 > {
@@ -120,5 +120,5 @@ class ComponentName extends PureComponent<
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
-export default ComponentName
+export default `!v expand('%:t:r')`
 endsnippet

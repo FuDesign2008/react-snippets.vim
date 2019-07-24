@@ -2,7 +2,7 @@ extends javascript
 
 
 snippet reactf "Create react function component"
-function ComponentName(props) {
+function `!v expand('%:t:r')`(props) {
   return <div>Hello, {props.name}</div>
 }
 endsnippet
@@ -10,7 +10,7 @@ endsnippet
 snippet reactc "Create react class component with es6"
 import React from 'react'
 
-class ComponentName extends React.Component {
+class `!v expand('%:t:r')` extends React.Component {
   static defaultProps = {
     // TODO
   }
@@ -56,14 +56,14 @@ class ComponentName extends React.Component {
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
-export default ComponentName
+export default `!v expand('%:t:r')`
 endsnippet
 
 
 snippet reactpc "Create react pure class component with es6"
 import React from 'react'
 
-class ComponentName extends React.PureComponent {
+class `!v expand('%:t:r')` extends React.PureComponent {
   static defaultProps = {
     // TODO
   }
@@ -109,5 +109,5 @@ class ComponentName extends React.PureComponent {
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
-export default ComponentName
+export default `!v expand('%:t:r')`
 endsnippet
