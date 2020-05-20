@@ -1,6 +1,10 @@
 import React from 'react'
 
 class ComponentName extends React.Component {
+  /***************************************************************************
+   *  static properties and methods
+   **************************************************************************/
+
   static defaultProps = {
     // TODO
   }
@@ -20,29 +24,43 @@ class ComponentName extends React.Component {
     return <div />
   }
 
+  /***************************************************************************
+   *  custom methods
+   **************************************************************************/
   nameMethod() {
     // TODO
   }
 
-  // Lifecycle Methods
+  /***************************************************************************
+   * lifecycle methods
+   **************************************************************************/
 
   // componentDidMount() {}
+
   // componentDidUpdate(prevProps, prevState, snapshot) {}
+
   // componentWillUnmount() {}
 
-  // Rarely Used Lifecycle Methods
+  /* rarely used lifecycle methods */
 
   // static getDerivedStateFromProps(props, state) {}
+
   // shouldComponentUpdate(nextProps, nextState) {}
+
   // getSnapshotBeforeUpdate(prevProps, prevState) {}
 
-  // Error boundaries
+  /* error boundaries */
+
   // static getDerivedStateFromError(error) {}
+
   // componentDidCatch(error, info) {}
 
-  // Legacy Lifecycle Methods
+  /* legacy lifecycle methods */
+
   // UNSAFE_componentWillMount() {}
+
   // UNSAFE_componentWillReceiveProps(nextProps) {}
+
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 

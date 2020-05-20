@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -8,7 +8,14 @@ interface ComponentNameState {
   stateName: string
 }
 
-class ComponentName extends Component<ComponentNameProps, ComponentNameState> {
+class ComponentName extends React.Component<
+  ComponentNameProps,
+  ComponentNameState
+> {
+  /***************************************************************************
+   *  static properties and methods
+   **************************************************************************/
+
   static defaultProps = {
     // TODO
   }
@@ -28,29 +35,44 @@ class ComponentName extends Component<ComponentNameProps, ComponentNameState> {
     return <div />
   }
 
+  /***************************************************************************
+   *  custom methods
+   **************************************************************************/
+
   nameMethod() {
     // TODO
   }
 
-  // Lifecycle Methods
+  /***************************************************************************
+   * lifecycle methods
+   **************************************************************************/
 
   // componentDidMount() {}
+
   // componentDidUpdate(prevProps, prevState, snapshot) {}
+
   // componentWillUnmount() {}
 
-  // Rarely Used Lifecycle Methods
+  /* rarely used lifecycle methods */
 
   // static getDerivedStateFromProps(props, state) {}
+
   // shouldComponentUpdate(nextProps, nextState) {}
+
   // getSnapshotBeforeUpdate(prevProps, prevState) {}
 
-  // Error boundaries
+  /* error boundaries */
+
   // static getDerivedStateFromError(error) {}
+
   // componentDidCatch(error, info) {}
 
-  // Legacy Lifecycle Methods
+  /* legacy lifecycle methods */
+
   // UNSAFE_componentWillMount() {}
+
   // UNSAFE_componentWillReceiveProps(nextProps) {}
+
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
