@@ -1,7 +1,7 @@
 extends typescript
 
-snippet reactct "Create react class component with typescript"
-import { Component } from 'react'
+snippet reactcomp "Create react class component with typescript"
+import React from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -11,7 +11,14 @@ interface ComponentNameState {
   stateName: string
 }
 
-class `!v expand('%:t:r')` extends Component<ComponentNameProps, ComponentNameState> {
+class `!v expand('%:t:r')` extends React.Component<
+  ComponentNameProps,
+  ComponentNameState
+> {
+  /***************************************************************************
+   *  static properties and methods
+   **************************************************************************/
+
   static defaultProps = {
     // TODO
   }
@@ -31,37 +38,52 @@ class `!v expand('%:t:r')` extends Component<ComponentNameProps, ComponentNameSt
     return <div />
   }
 
+  /***************************************************************************
+   *  custom methods
+   **************************************************************************/
+
   nameMethod() {
     // TODO
   }
 
-  // Lifecycle Methods
+  /***************************************************************************
+   * lifecycle methods
+   **************************************************************************/
 
   // componentDidMount() {}
+
   // componentDidUpdate(prevProps, prevState, snapshot) {}
+
   // componentWillUnmount() {}
 
-  // Rarely Used Lifecycle Methods
+  /* rarely used lifecycle methods */
 
   // static getDerivedStateFromProps(props, state) {}
+
   // shouldComponentUpdate(nextProps, nextState) {}
+
   // getSnapshotBeforeUpdate(prevProps, prevState) {}
 
-  // Error boundaries
+  /* error boundaries */
+
   // static getDerivedStateFromError(error) {}
+
   // componentDidCatch(error, info) {}
 
-  // Legacy Lifecycle Methods
+  /* legacy lifecycle methods */
+
   // UNSAFE_componentWillMount() {}
+
   // UNSAFE_componentWillReceiveProps(nextProps) {}
+
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
 export default `!v expand('%:t:r')`
 endsnippet
 
-snippet reactpct "Create react pure component with typescript"
-import { PureComponent } from 'react'
+snippet reactpure "Create react pure component with typescript"
+import React from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -71,10 +93,14 @@ interface ComponentNameState {
   stateName: string
 }
 
-class `!v expand('%:t:r')` extends PureComponent<
+class `!v expand('%:t:r')` extends React.PureComponent<
   ComponentNameProps,
   ComponentNameState
 > {
+  /***************************************************************************
+   *  static properties and methods
+   **************************************************************************/
+
   static defaultProps = {
     // TODO
   }
@@ -94,29 +120,42 @@ class `!v expand('%:t:r')` extends PureComponent<
     return <div />
   }
 
+  /***************************************************************************
+   * lifecycle methods
+   **************************************************************************/
+
   nameMethod() {
     // TODO
   }
 
-  // Lifecycle Methods
+  /***************************************************************************
+   * lifecycle methods
+   **************************************************************************/
 
   // componentDidMount() {}
+
   // componentDidUpdate(prevProps, prevState, snapshot) {}
+
   // componentWillUnmount() {}
 
-  // Rarely Used Lifecycle Methods
+  /* rarely used lifecycle methods */
 
   // static getDerivedStateFromProps(props, state) {}
   // shouldComponentUpdate(nextProps, nextState) {}
   // getSnapshotBeforeUpdate(prevProps, prevState) {}
 
-  // Error boundaries
+  /* error boundaries */
+
   // static getDerivedStateFromError(error) {}
+
   // componentDidCatch(error, info) {}
 
-  // Legacy Lifecycle Methods
+  /* legacy lifecycle methods */
+
   // UNSAFE_componentWillMount() {}
+
   // UNSAFE_componentWillReceiveProps(nextProps) {}
+
   // UNSAFE_componentWillUpdate(nextProps, nextState) {}
 }
 
