@@ -1,7 +1,7 @@
 extends typescript
 
 snippet reactcomp "Create react class component with typescript"
-import React from 'react'
+import React, {ReactElement} from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -34,7 +34,7 @@ class `!v expand('%:t:r')` extends React.Component<
     this.nameMethod = this.nameMethod.bind(this)
   }
 
-  render() {
+  render(): ReactElement {
     return <div />
   }
 
@@ -42,7 +42,7 @@ class `!v expand('%:t:r')` extends React.Component<
    *  custom methods
    **************************************************************************/
 
-  nameMethod() {
+  nameMethod():void {
     // TODO
   }
 
@@ -83,7 +83,7 @@ export default `!v expand('%:t:r')`
 endsnippet
 
 snippet reactpure "Create react pure component with typescript"
-import React from 'react'
+import React, {ReactElement} from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -116,7 +116,7 @@ class `!v expand('%:t:r')` extends React.PureComponent<
     this.nameMethod = this.nameMethod.bind(this)
   }
 
-  render() {
+  render():ReactElement {
     return <div />
   }
 
@@ -124,7 +124,7 @@ class `!v expand('%:t:r')` extends React.PureComponent<
    * lifecycle methods
    **************************************************************************/
 
-  nameMethod() {
+  nameMethod(): void {
     // TODO
   }
 

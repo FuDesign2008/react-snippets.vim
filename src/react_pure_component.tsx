@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {ReactElement} from 'react'
 
 interface ComponentNameProps {
   propName: string
@@ -31,7 +31,7 @@ class ComponentName extends React.PureComponent<
     this.nameMethod = this.nameMethod.bind(this)
   }
 
-  render() {
+  render(): ReactElement {
     return <div />
   }
 
@@ -39,7 +39,7 @@ class ComponentName extends React.PureComponent<
    * lifecycle methods
    **************************************************************************/
 
-  nameMethod() {
+  nameMethod(): void {
     // TODO
   }
 
