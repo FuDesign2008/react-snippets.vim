@@ -1,0 +1,64 @@
+
+extends typescript
+
+snippet reactslice "Create slice of redux with typescript"
+
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { AppThunk } from 'src/pages/home/store'
+import {
+  ApiNameResponseData,
+  ApiNameRequestParams,
+  getApiData,
+} from './apiName'
+
+interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`State {
+  loading: boolean
+  error: string
+  data: ApiNameResponseData | null
+}
+
+const initialState: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`State = {
+  loading: false,
+  error: '',
+  data: null,
+}
+
+const `!v expand('%:t:r')`Slice = createSlice({
+  name: '`!v expand('%:t:r')`Slice',
+  initialState,
+  reducers: {
+    getDataStart(state): void {
+      state.loading = true
+    },
+    getDataSuccess(state, action: PayloadAction<ApiNameResponseData>): void {
+      state.loading = false
+      state.data = action.payload
+    },
+    getDataError(state, action: PayloadAction<string>): void {
+      state.loading = false
+      state.error = action.payload
+    },
+  },
+})
+
+export const {
+  getDataStart,
+  getDataSuccess,
+  getDataError,
+} = `!v expand('%:t:r')`Slice.actions
+
+export default `!v expand('%:t:r')`Slice.reducer
+
+export const fetchData = (params: ApiNameRequestParams): AppThunk => async (
+  dispatch,
+): Promise<void> => {
+  try {
+    dispatch(getDataStart())
+    const data = await getApiData(params)
+    dispatch(getDataSuccess(data))
+  } catch (err) {
+    dispatch(getDataError(err as string))
+  }
+}
+
+endsnippet

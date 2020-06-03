@@ -161,3 +161,41 @@ class `!v expand('%:t:r')` extends React.PureComponent<
 
 export default `!v expand('%:t:r')`
 endsnippet
+
+snippet reacthook "Create react hook component with typescript"
+import React, { ReactElement, useEffect } from 'react'
+import { useSelector, useDispatch, shallowEqual } from 'react-redux'
+import styles from './`!v expand('%:t:r')`.module.scss'
+import { fetchData } from '../sliceName'
+import { RootState } from 'src/pages/home/store/rootReducer'
+
+export interface `!v expand('%:t:r')`Props {
+  propName: string
+}
+
+interface `!v expand('%:t:r')`State {
+  stateName: string
+}
+
+function `!v expand('%:t:r')`(props: `!v expand('%:t:r')`Props): ReactElement {
+  // 获取数据
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchData({}))
+  }, [])
+
+  // 绑定数据
+  const { data } = useSelector((state: RootState) => {
+    return {
+      data: state.sliceName.data,
+    }
+  }, shallowEqual)
+
+  // TODO
+
+  return <div className={styles.container}></div>
+}
+
+export default `!v expand('%:t:r')`
+endsnippet

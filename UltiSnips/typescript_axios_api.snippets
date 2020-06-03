@@ -1,0 +1,34 @@
+extends typescript
+
+snippet axios "Create api by axios with typescript"
+import { axios, API_PREFIX } from 'src/http'
+
+const theApi = \`${API_PREFIX}/path/of/api\`
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams {
+  // TODO
+}
+
+interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData {
+  // TODO
+}
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+function parseResponseData(data: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData): `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+async function getApiData(
+  params?: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams,
+): Promise<`!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData> {
+  const url = theApi
+  const repsonse = await axios.get(url)
+  const parsed = parseResponseData(repsonse.data.data as `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData[])
+  return parsed
+}
+
+export { getApiData }
+endsnippet
