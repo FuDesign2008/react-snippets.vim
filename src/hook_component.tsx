@@ -14,10 +14,6 @@ export interface HookExampleProps {
   propName: string
 }
 
-interface HookExampleState {
-  stateName: string
-}
-
 function HookExample(props: HookExampleProps): ReactElement {
   // 获取数据
   const dispatch = useDispatch()
