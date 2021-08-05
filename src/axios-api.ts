@@ -24,7 +24,7 @@ function parseResponseData(data: ApiNameRawResponseData): ApiNameResponseData {
   // TODO
 }
 
-async function getApiData(
+export async function getApiData(
   params?: ApiNameRequestParams,
 ): Promise<ApiNameResponseData> {
   const url = theApi
@@ -34,4 +34,3 @@ async function getApiData(
   return parsed
 }
 
-export { getApiData }
