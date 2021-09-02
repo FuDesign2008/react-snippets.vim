@@ -28,8 +28,8 @@ export async function getApiData(
   params?: ApiNameRequestParams,
 ): Promise<ApiNameResponseData> {
   const url = theApi
-  const repsonse = await axios.get(url)
-  const parsed = parseResponseData(repsonse.data
+  const response = await axios.get(url)
+  const parsed = parseResponseData(response.data
     .data as ApiNameRawResponseData[])
   return parsed
 }
