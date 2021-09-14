@@ -1,6 +1,7 @@
 extends typescript
 
-snippet axiosapi "Create api by axios with typescript"
+
+snippet axiosapi "Create api module use GET with data" b
 import { axios, API_PREFIX } from 'src/http'
 
 const theApi = \`${API_PREFIX}/path/of/api\`
@@ -22,10 +23,80 @@ function parseResponseData(data: `!v toupper(strcharpart(expand('%:t:r'), 0, 1))
 }
 
 export async function getApiData(
-  params?: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams,
+  params: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams,
 ): Promise<`!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData> {
   const url = theApi
-  const response = await axios.get(url)
+  const response = await axios.get(url, {
+    params,
+  })
+  const parsed = parseResponseData(response.data.data as `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData[])
+  return parsed
+}
+
+endsnippet
+
+snippet axiosapipost "Create api module use POST with data" b
+import { axios, API_PREFIX } from 'src/http'
+
+const theApi = \`${API_PREFIX}/path/of/api\`
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams {
+  // TODO
+}
+
+interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData {
+  // TODO
+}
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+function parseResponseData(data: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData): `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+export async function getApiData(
+  params: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams,
+): Promise<`!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData> {
+  const url = theApi
+  const response = await axios.post(url, {
+    ...params,
+  })
+  const parsed = parseResponseData(response.data.data as `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData[])
+  return parsed
+}
+
+endsnippet
+
+snippet axiosapiput "Create api module use PUT with data" b
+import { axios, API_PREFIX } from 'src/http'
+
+const theApi = \`${API_PREFIX}/path/of/api\`
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams {
+  // TODO
+}
+
+interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData {
+  // TODO
+}
+
+export interface `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+function parseResponseData(data: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData): `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData {
+  // TODO
+}
+
+export async function getApiData(
+  params: `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RequestParams,
+): Promise<`!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`ResponseData> {
+  const url = theApi
+  const response = await axios.put(url, {
+    ...params,
+  })
   const parsed = parseResponseData(response.data.data as `!v toupper(strcharpart(expand('%:t:r'), 0, 1)) . strcharpart(expand('%:t:r'), 1)`RawResponseData[])
   return parsed
 }
