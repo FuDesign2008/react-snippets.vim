@@ -2,7 +2,7 @@ extends typescript
 
 
 snippet axiosapi "Create api module use GET with data" b
-import { axios, API_PREFIX } from 'src/http'
+import axios from '@/common/http/axios'
 
 const theApi = \`${API_PREFIX}/path/of/api\`
 
@@ -36,7 +36,7 @@ export async function getApiData(
 endsnippet
 
 snippet axiosapipost "Create api module use POST with data" b
-import { axios, API_PREFIX } from 'src/http'
+import axios from '@/common/http/axios'
 
 const theApi = \`${API_PREFIX}/path/of/api\`
 
@@ -70,7 +70,7 @@ export async function getApiData(
 endsnippet
 
 snippet axiosapiput "Create api module use PUT with data" b
-import { axios, API_PREFIX } from 'src/http'
+import axios from '@/common/http/axios'
 
 const theApi = \`${API_PREFIX}/path/of/api\`
 

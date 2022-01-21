@@ -4,7 +4,7 @@
  * @date
  */
 
-import { axios, API_PREFIX } from 'src/http'
+import axios from '@/common/http/axios'
 
 const theApi = `${API_PREFIX}/path/of/api`
 
@@ -33,4 +33,3 @@ export async function getApiData(
     .data as ApiNameRawResponseData[])
   return parsed
 }
-
